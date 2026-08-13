@@ -538,16 +538,6 @@
     color:var(--text-dim);
     font-size:0.97rem;
     line-height:1.6;
-    display:-webkit-box;
-    -webkit-line-clamp:2;
-    -webkit-box-orient:vertical;
-    overflow:hidden;
-  }
-  .project-desc-full{
-    color:var(--text-dim);
-    font-size:0.95rem;
-    line-height:1.65;
-    margin-top:2px;
   }
   .project-stack{
     display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;
@@ -1079,8 +1069,7 @@
             <div class="project-title" data-i18n="proj_documind_title">DocuMind</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc" data-i18n="proj_documind_desc">DocuMind is a full-stack RAG application — users upload documents through a Next.js frontend, a Spring Boot backend extracts and chunks the text, generates vector embeddings using a locally-run AI model via Ollama, and stores everything in a PostgreSQL database with the pgvector extension for semantic search. When a user asks a question, the system retrieves the most relevant document chunks using vector similarity search and sends them to an LLM to generate a grounded, cited answer — all secured with JWT-based authentication, and the whole database layer containerized with Docker for reproducibility.</div>
-          <p class="project-desc-full" data-i18n="proj_documind_full">Application full-stack de type RAG (Retrieval-Augmented Generation) permettant d'interroger des documents en langage naturel. L'utilisateur charge ses fichiers via une interface Next.js, le backend Spring Boot les découpe et génère des embeddings vectoriels grâce à un modèle IA exécuté localement via Ollama. Ces vecteurs sont stockés dans une base PostgreSQL avec l'extension pgvector pour permettre une recherche par similarité sémantique. Lorsqu'un utilisateur pose une question, le système retrouve les passages les plus pertinents et génère une réponse sourcée grâce à un LLM. L'ensemble est sécurisé par authentification JWT et conteneurisé avec Docker pour garantir la reproductibilité.</p>
+          <div class="project-desc" data-i18n="proj_documind_full">Application full-stack de type RAG (Retrieval-Augmented Generation) permettant d'interroger des documents en langage naturel. L'utilisateur charge ses fichiers via une interface Next.js, le backend Spring Boot les découpe et génère des embeddings vectoriels grâce à un modèle IA exécuté localement via Ollama. Ces vecteurs sont stockés dans une base PostgreSQL avec l'extension pgvector pour permettre une recherche par similarité sémantique. Lorsqu'un utilisateur pose une question, le système retrouve les passages les plus pertinents et génère une réponse sourcée grâce à un LLM. L'ensemble est sécurisé par authentification JWT et conteneurisé avec Docker pour garantir la reproductibilité.</div>
           <details>
             <summary data-i18n="proj_documind_how">Comment ça marche</summary>
             <p data-i18n="proj_documind_how_text">Lorsqu'un utilisateur pose une question, le système récupère les chunks de documents les plus pertinents via recherche par similarité vectorielle et les envoie à un LLM pour générer une réponse fondée et citée — le tout sécurisé par authentification JWT, avec la couche base de données containerisée via Docker pour la reproductibilité.</p>
@@ -1119,8 +1108,7 @@
             <div class="project-title" data-i18n="proj_guardia_title">GUARDIA</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc" data-i18n="proj_guardia_desc">Plateforme intelligente de gestion des risques et des sinistres pour flottes automobiles : IA, cartographie interactive, tableau de bord, gestion des rôles.</div>
-          <p class="project-desc-full" data-i18n="proj_guardia_full">Plateforme intelligente de gestion des risques et des sinistres destinée aux flottes automobiles. Elle intègre une cartographie interactive permettant de visualiser en temps réel la localisation des véhicules et des incidents. Un tableau de bord centralise les indicateurs clés pour le suivi des sinistres et l'analyse des risques. Le système inclut une gestion fine des rôles utilisateurs (administrateurs, gestionnaires, conducteurs). Développée avec Java, Spring Boot et React, l'application combine robustesse backend et interface moderne.</p>
+          <div class="project-desc" data-i18n="proj_guardia_full">Plateforme intelligente de gestion des risques et des sinistres destinée aux flottes automobiles. Elle intègre une cartographie interactive permettant de visualiser en temps réel la localisation des véhicules et des incidents. Un tableau de bord centralise les indicateurs clés pour le suivi des sinistres et l'analyse des risques. Le système inclut une gestion fine des rôles utilisateurs (administrateurs, gestionnaires, conducteurs). Développée avec Java, Spring Boot et React, l'application combine robustesse backend et interface moderne.</div>
           <details>
             <summary data-i18n="proj_guardia_how">Comment ça marche</summary>
             <p data-i18n="proj_guardia_how_text">Interface React pour les dashboards et la cartographie, backend Spring Boot exposant des API REST sécurisées par JWT. Les risques sont analysés en temps réel grâce à un modèle d'IA entraîné sur des données historiques de sinistres.</p>
@@ -1156,8 +1144,7 @@
             <div class="project-title" data-i18n="proj_shopflow_title">ShopFlow</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc" data-i18n="proj_shopflow_desc">Plateforme e-commerce Full-Stack avec authentification sécurisée (JWT) et gestion complète des commandes.</div>
-          <p class="project-desc-full" data-i18n="proj_shopflow_full">Plateforme e-commerce full-stack couvrant l'ensemble du parcours d'achat, du catalogue jusqu'au paiement. L'authentification des utilisateurs est sécurisée grâce à JWT, garantissant la protection des comptes et des données sensibles. Le back-office permet aux administrateurs de gérer les produits, les stocks et le suivi des commandes en temps réel. La base de données MySQL structure l'ensemble des entités (utilisateurs, produits, commandes) de façon relationnelle. L'architecture s'appuie sur Java et Spring Boot pour une gestion fiable des transactions.</p>
+          <div class="project-desc" data-i18n="proj_shopflow_full">Plateforme e-commerce full-stack couvrant l'ensemble du parcours d'achat, du catalogue jusqu'au paiement. L'authentification des utilisateurs est sécurisée grâce à JWT, garantissant la protection des comptes et des données sensibles. Le back-office permet aux administrateurs de gérer les produits, les stocks et le suivi des commandes en temps réel. La base de données MySQL structure l'ensemble des entités (utilisateurs, produits, commandes) de façon relationnelle. L'architecture s'appuie sur Java et Spring Boot pour une gestion fiable des transactions.</div>
           <details>
             <summary data-i18n="proj_shopflow_how">Comment ça marche</summary>
             <p data-i18n="proj_shopflow_how_text">L'utilisateur s'authentifie via JWT, parcourt le catalogue, ajoute des articles au panier et passe commande. Le back-office permet aux administrateurs de gérer les produits, les stocks et le suivi des commandes.</p>
@@ -1194,8 +1181,7 @@
             <div class="project-title" data-i18n="proj_health_title">HealthGuide</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc" data-i18n="proj_health_desc">Application web de suivi médical intégrant l'OCR (reconnaissance de texte) et un chatbot intelligent basé sur l'API Google Gemini pour l'analyse d'ordonnances et de documents médicaux.</div>
-          <p class="project-desc-full" data-i18n="proj_health_full">Application web de suivi médical pensée pour simplifier la gestion des documents de santé au quotidien. Elle intègre une technologie d'OCR (reconnaissance de texte) permettant d'extraire automatiquement les informations d'ordonnances et de documents médicaux scannés. Un chatbot intelligent, basé sur l'API Google Gemini, accompagne l'utilisateur pour répondre à ses questions et l'aider à interpréter ses documents. L'interface, développée en React, offre une expérience fluide et accessible. Le backend Express.js orchestre la communication entre l'OCR, le chatbot et le stockage des données utilisateur.</p>
+          <div class="project-desc" data-i18n="proj_health_full">Application web de suivi médical pensée pour simplifier la gestion des documents de santé au quotidien. Elle intègre une technologie d'OCR (reconnaissance de texte) permettant d'extraire automatiquement les informations d'ordonnances et de documents médicaux scannés. Un chatbot intelligent, basé sur l'API Google Gemini, accompagne l'utilisateur pour répondre à ses questions et l'aider à interpréter ses documents. L'interface, développée en React, offre une expérience fluide et accessible. Le backend Express.js orchestre la communication entre l'OCR, le chatbot et le stockage des données utilisateur.</div>
           <details>
             <summary data-i18n="proj_health_how">Comment ça marche</summary>
             <p data-i18n="proj_health_how_text">L'utilisateur télécharge une ordonnance ou une analyse médicale scannée. Le moteur OCR extrait le texte du document, puis le chatbot Gemini interprète les informations, répond aux questions du patient et synthétise les points essentiels pour faciliter la compréhension et le suivi médical.</p>
