@@ -51,6 +51,27 @@
   .mono{font-family:'JetBrains Mono', monospace;}
   .dim{color:var(--text-dim);}
 
+  /* LANGUAGE TOGGLE */
+  .lang-toggle{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:6px 12px;
+    cursor:pointer;
+    transition:all 0.2s ease;
+    font-weight:500;
+  }
+  .lang-toggle:hover{
+    border-color:var(--accent);
+    color:var(--accent);
+    background:rgba(92,125,104,0.06);
+  }
+
   /* NAV */
   nav{
     position:sticky; top:0; z-index:50;
@@ -522,6 +543,12 @@
     -webkit-box-orient:vertical;
     overflow:hidden;
   }
+  .project-desc-full{
+    color:var(--text-dim);
+    font-size:0.95rem;
+    line-height:1.65;
+    margin-top:2px;
+  }
   .project-stack{
     display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;
   }
@@ -823,12 +850,13 @@
   <div class="wrap">
     <div class="nav-name mono">Sarra Ben Mohamed</div>
     <div class="nav-links">
-      <a href="#about">à propos</a>
-      <a href="#projects">projets</a>
-      <a href="#stack">compétences</a>
-      <a href="#certifications">certifications</a>
-      <a href="#contact">contact</a>
+      <a href="#about" data-i18n="nav_about">à propos</a>
+      <a href="#projects" data-i18n="nav_projects">projets</a>
+      <a href="#stack" data-i18n="nav_skills">compétences</a>
+      <a href="#certifications" data-i18n="nav_certifications">certifications</a>
+      <a href="#contact" data-i18n="nav_contact">contact</a>
     </div>
+    <button class="lang-toggle" id="langToggle" aria-label="Switch language" data-i18n="lang_toggle_aria">FR</button>
   </div>
 </nav>
 
@@ -840,20 +868,20 @@
           <span class="first">Sarra</span><br>
           <span class="last">Ben Mohamed</span>
         </h1>
-        <div class="hero-subtitle">Étudiante en Génie Logiciel &amp; Systèmes d'Information</div>
-        <div class="hero-institution">Faculté des Sciences de Monastir · Tunisie</div>
-        <p class="bio">
+        <div class="hero-subtitle" data-i18n="hero_subtitle">Étudiante en Génie Logiciel &amp; Systèmes d'Information</div>
+        <div class="hero-institution" data-i18n="hero_institution">Faculté des Sciences de Monastir · Tunisie</div>
+        <p class="bio" data-i18n="hero_bio">
           Passionnée par le développement Full-Stack, les systèmes Linux, les réseaux et les bases de données. J'aime comprendre le fonctionnement complet d'une application, du front-end à l'infrastructure qui la fait tourner.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">VOIR MES PROJETS</a>
-          <a href="#contact" class="btn btn-ghost">ME CONTACTER</a>
+          <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">VOIR MES PROJETS</a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="hero_btn_contact">ME CONTACTER</a>
         </div>
         <div class="hero-divider"></div>
         <div class="stats">
-          <div class="stat"><div class="num">7</div><div class="lbl">projets réalisés</div></div>
-          <div class="stat"><div class="num">6</div><div class="lbl">technologies maîtrisées</div></div>
-          <div class="stat"><div class="num">2026</div><div class="lbl">membre IEEE SIGHT</div></div>
+          <div class="stat"><div class="num">7</div><div class="lbl" data-i18n="stat_projects">projets réalisés</div></div>
+          <div class="stat"><div class="num">6</div><div class="lbl" data-i18n="stat_tech">technologies maîtrisées</div></div>
+          <div class="stat"><div class="num">2026</div><div class="lbl" data-i18n="stat_ieee">membre IEEE SIGHT</div></div>
         </div>
       </div>
 
@@ -863,12 +891,12 @@
             <img src="assests/self1.png" alt="Sarra Ben Mohamed">
           </div>
           <div class="hero-badge">
-            <span class="t">Parcours</span>
-            <span class="v">Génie Logiciel<br>&amp; Systèmes d'Information</span>
+            <span class="t" data-i18n="badge_t">Parcours</span>
+            <span class="v" data-i18n="badge_v">Génie Logiciel<br>&amp; Systèmes d'Information</span>
           </div>
           <div class="hero-photo-float">
             <span>3<sup style="font-size:0.55rem;">e</sup></span>
-            <span>Année</span>
+            <span data-i18n="photo_year">Année</span>
           </div>
         </div>
       </div>
@@ -880,10 +908,10 @@
   <div class="wrap">
     <div class="section-head">
       <span class="tag mono"></span>
-      <h2>À propos</h2>
+      <h2 data-i18n="about_title">À propos</h2>
     </div>
     <div class="panel" style="padding:28px 32px;">
-      <p class="dim" style="font-size:1.02rem; line-height:1.7; margin-bottom:20px; max-width:780px;">
+      <p class="dim" style="font-size:1.02rem; line-height:1.7; margin-bottom:20px; max-width:780px;" data-i18n="about_bio">
         Étudiante en Sciences de l'Informatique, spécialité Génie Logiciel & Systèmes d'Information, à la Faculté des Sciences de Monastir. Depuis le début de mes études, je m'intéresse à l'informatique dans son entier — du développement d'applications à la gestion des données, en passant par les systèmes et les réseaux qui font fonctionner le tout. J'aime apprendre par la pratique : chaque projet est pour moi l'occasion de découvrir une nouvelle technologie ou un nouveau concept. Autonome et curieuse, je cherche à comprendre les choses en profondeur plutôt qu'en surface, et j'apprécie autant travailler seule que collaborer en équipe sur des projets concrets. Organisée, je sais gérer plusieurs projets en parallèle tout en respectant les délais, et je reste toujours en train d'apprendre — que ce soit à travers des cours en ligne, des projets personnels ou des lectures techniques. J'accorde une grande importance à la qualité du code et à la clarté de la communication au sein d'une équipe. Aujourd'hui, je souhaite mettre ces compétences au service d'une entreprise, à travers un stage qui me permettra d'apprendre davantage et de contribuer à de vrais projets.
       </p>
       <div style="display:flex; flex-wrap:wrap; gap:8px;">
@@ -904,80 +932,80 @@
   <div class="wrap">
     <div class="section-head">
       <span class="tag mono"></span>
-      <h2>Certifications</h2>
+      <h2 data-i18n="certifications_title">Certifications</h2>
     </div>
     <div class="cert-list">
       <div class="cert-item">
         <div class="cert-main">
           <span class="cert-name">Apply AI: Analyse customer reviews</span>
           <span class="cert-org">Cisco</span>
-          <span class="cert-meta">Certification</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
-        <a class="cert-link" href="Certificate/ApplyAIAnalyzeCustomerReviews.pdf" target="_blank" rel="noopener">Voir le certificat →</a>
+        <a class="cert-link" href="Certificate/ApplyAIAnalyzeCustomerReviews.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
       <div class="cert-item">
         <div class="cert-main">
           <span class="cert-name">Introduction to Modern AI</span>
           <span class="cert-org">Cisco</span>
-          <span class="cert-meta">Certification</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
-        <a class="cert-link" href="Certificate/certificat modern Ai.pdf" target="_blank" rel="noopener">Voir le certificat →</a>
+        <a class="cert-link" href="Certificate/certificat modern Ai.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
       <div class="cert-item">
         <div class="cert-main">
           <span class="cert-name">Cyber Threat Management</span>
           <span class="cert-org">Cisco</span>
-          <span class="cert-meta">Certification</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
-        <a class="cert-link" href="Certificate/certificate cyber.pdf" target="_blank" rel="noopener">Voir le certificat →</a>
+        <a class="cert-link" href="Certificate/certificate cyber.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
       <div class="cert-item">
         <div class="cert-main">
           <span class="cert-name">NDG Linux Unhatched</span>
           <span class="cert-org">Cisco</span>
-          <span class="cert-meta">Certification</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
-        <a class="cert-link" href="Certificate/certificate linux.pdf" target="_blank" rel="noopener">Voir le certificat →</a>
+        <a class="cert-link" href="Certificate/certificate linux.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
       <div class="cert-item">
         <div class="cert-main">
           <span class="cert-name">Python Essentials</span>
           <span class="cert-org">Cisco</span>
-          <span class="cert-meta">Certification</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
-        <a class="cert-link" href="Certificate/certificate python.pdf" target="_blank" rel="noopener">Voir le certificat →</a>
+        <a class="cert-link" href="Certificate/certificate python.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
       <div class="cert-item">
         <div class="cert-main">
           <span class="cert-name">Introduction to Internet of Things</span>
           <span class="cert-org">Cisco</span>
-          <span class="cert-meta">Certification</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
-        <a class="cert-link" href="Certificate/iot.pdf" target="_blank" rel="noopener">Voir le certificat →</a>
+        <a class="cert-link" href="Certificate/iot.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
       <div class="cert-item">
         <div class="cert-main">
           <span class="cert-name">Operating Systems Basics</span>
           <span class="cert-org">Cisco</span>
-          <span class="cert-meta">Certification</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
-        <a class="cert-link" href="Certificate/OperatingSystemsBasics.pdf" target="_blank" rel="noopener">Voir le certificat →</a>
+        <a class="cert-link" href="Certificate/OperatingSystemsBasics.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
       <div class="cert-item">
         <div class="cert-main">
           <span class="cert-name">Scrum Fundamentals</span>
           <span class="cert-org">SCRUMstudy</span>
-          <span class="cert-meta">Certification</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
-        <a class="cert-link" href="Certificate/ScrumFundamentalsCertified-sarraBenMohamed-1177938.pdf" target="_blank" rel="noopener">Voir le certificat →</a>
+        <a class="cert-link" href="Certificate/ScrumFundamentalsCertified-sarraBenMohamed-1177938.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
       <div class="cert-item">
         <div class="cert-main">
           <span class="cert-name">Web Development Fundamentals</span>
           <span class="cert-org">IBM SkillsBuild</span>
-          <span class="cert-meta">Certification</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
-        <a class="cert-link" href="ibm-design.pdf" target="_blank" rel="noopener">Voir le certificat →</a>s
+        <a class="cert-link" href="Certificate/ibm-design.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
     </div>
   </div>
@@ -989,7 +1017,7 @@
   <div class="wrap">
     <div class="section-head">
       <span class="tag mono"></span>
-      <h2>Projets</h2>
+      <h2 data-i18n="projects_title">Projets</h2>
     </div>
     <div class="projects-grid">
       <div class="project-card">
@@ -1002,19 +1030,20 @@
             <img src="assests/documind4.png" alt="DocuMind 4">
             <img src="assests/documind5.png" alt="DocuMind 5">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent">‹</button>
-          <button class="screenshot-btn next" aria-label="Suivant">›</button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev">‹</button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next">›</button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
-            <div class="project-title">DocuMind</div>
+            <div class="project-title" data-i18n="proj_documind_title">DocuMind</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc">DocuMind is a full-stack RAG application — users upload documents through a Next.js frontend, a Spring Boot backend extracts and chunks the text, generates vector embeddings using a locally-run AI model via Ollama, and stores everything in a PostgreSQL database with the pgvector extension for semantic search. When a user asks a question, the system retrieves the most relevant document chunks using vector similarity search and sends them to an LLM to generate a grounded, cited answer — all secured with JWT-based authentication, and the whole database layer containerized with Docker for reproducibility.</div>
+          <div class="project-desc" data-i18n="proj_documind_desc">DocuMind is a full-stack RAG application — users upload documents through a Next.js frontend, a Spring Boot backend extracts and chunks the text, generates vector embeddings using a locally-run AI model via Ollama, and stores everything in a PostgreSQL database with the pgvector extension for semantic search. When a user asks a question, the system retrieves the most relevant document chunks using vector similarity search and sends them to an LLM to generate a grounded, cited answer — all secured with JWT-based authentication, and the whole database layer containerized with Docker for reproducibility.</div>
+          <p class="project-desc-full" data-i18n="proj_documind_full">Application full-stack de type RAG (Retrieval-Augmented Generation) permettant d'interroger des documents en langage naturel. L'utilisateur charge ses fichiers via une interface Next.js, le backend Spring Boot les découpe et génère des embeddings vectoriels grâce à un modèle IA exécuté localement via Ollama. Ces vecteurs sont stockés dans une base PostgreSQL avec l'extension pgvector pour permettre une recherche par similarité sémantique. Lorsqu'un utilisateur pose une question, le système retrouve les passages les plus pertinents et génère une réponse sourcée grâce à un LLM. L'ensemble est sécurisé par authentification JWT et conteneurisé avec Docker pour garantir la reproductibilité.</p>
           <details>
-            <summary>Comment ça marche</summary>
-            <p>Lorsqu'un utilisateur pose une question, le système récupère les chunks de documents les plus pertinents via recherche par similarité vectorielle et les envoie à un LLM pour générer une réponse fondée et citée — le tout sécurisé par authentification JWT, avec la couche base de données containerisée via Docker pour la reproductibilité.</p>
+            <summary data-i18n="proj_documind_how">Comment ça marche</summary>
+            <p data-i18n="proj_documind_how_text">Lorsqu'un utilisateur pose une question, le système récupère les chunks de documents les plus pertinents via recherche par similarité vectorielle et les envoie à un LLM pour générer une réponse fondée et citée — le tout sécurisé par authentification JWT, avec la couche base de données containerisée via Docker pour la reproductibilité.</p>
           </details>
           <div class="project-stack">
             <span class="pill">Next.js</span>
@@ -1025,7 +1054,7 @@
             <span class="pill">Docker</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sarra6/documind" target="_blank" rel="noopener">↗ Code</a>
+            <a href="https://github.com/sarra6/documind" target="_blank" rel="noopener" data-i18n="proj_link_code">↗ Code</a>
           </div>
         </div>
       </div>
@@ -1041,19 +1070,20 @@
             <img src="assests/guardia7.png" alt="GUARDIA 7">
             <img src="assests/guardia8.png" alt="GUARDIA 8">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent">‹</button>
-          <button class="screenshot-btn next" aria-label="Suivant">›</button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev">‹</button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next">›</button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
-            <div class="project-title">GUARDIA</div>
+            <div class="project-title" data-i18n="proj_guardia_title">GUARDIA</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc">Plateforme intelligente de gestion des risques et des sinistres pour flottes automobiles : IA, cartographie interactive, tableau de bord, gestion des rôles.</div>
+          <div class="project-desc" data-i18n="proj_guardia_desc">Plateforme intelligente de gestion des risques et des sinistres pour flottes automobiles : IA, cartographie interactive, tableau de bord, gestion des rôles.</div>
+          <p class="project-desc-full" data-i18n="proj_guardia_full">Plateforme intelligente de gestion des risques et des sinistres destinée aux flottes automobiles. Elle intègre une cartographie interactive permettant de visualiser en temps réel la localisation des véhicules et des incidents. Un tableau de bord centralise les indicateurs clés pour le suivi des sinistres et l'analyse des risques. Le système inclut une gestion fine des rôles utilisateurs (administrateurs, gestionnaires, conducteurs). Développée avec Java, Spring Boot et React, l'application combine robustesse backend et interface moderne.</p>
           <details>
-            <summary>Comment ça marche</summary>
-            <p>Interface React pour les dashboards et la cartographie, backend Spring Boot exposant des API REST sécurisées par JWT. Les risques sont analysés en temps réel grâce à un modèle d'IA entraîné sur des données historiques de sinistres.</p>
+            <summary data-i18n="proj_guardia_how">Comment ça marche</summary>
+            <p data-i18n="proj_guardia_how_text">Interface React pour les dashboards et la cartographie, backend Spring Boot exposant des API REST sécurisées par JWT. Les risques sont analysés en temps réel grâce à un modèle d'IA entraîné sur des données historiques de sinistres.</p>
           </details>
           <div class="project-stack">
             <span class="pill">Java</span>
@@ -1077,19 +1107,20 @@
             <img src="assests/shopf6.png" alt="ShopFlow 6">
             <img src="assests/shopf7.png" alt="ShopFlow 7">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent">‹</button>
-          <button class="screenshot-btn next" aria-label="Suivant">›</button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev">‹</button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next">›</button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
-            <div class="project-title">ShopFlow</div>
+            <div class="project-title" data-i18n="proj_shopflow_title">ShopFlow</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc">Plateforme e-commerce Full-Stack avec authentification sécurisée (JWT) et gestion complète des commandes.</div>
+          <div class="project-desc" data-i18n="proj_shopflow_desc">Plateforme e-commerce Full-Stack avec authentification sécurisée (JWT) et gestion complète des commandes.</div>
+          <p class="project-desc-full" data-i18n="proj_shopflow_full">Plateforme e-commerce full-stack couvrant l'ensemble du parcours d'achat, du catalogue jusqu'au paiement. L'authentification des utilisateurs est sécurisée grâce à JWT, garantissant la protection des comptes et des données sensibles. Le back-office permet aux administrateurs de gérer les produits, les stocks et le suivi des commandes en temps réel. La base de données MySQL structure l'ensemble des entités (utilisateurs, produits, commandes) de façon relationnelle. L'architecture s'appuie sur Java et Spring Boot pour une gestion fiable des transactions.</p>
           <details>
-            <summary>Comment ça marche</summary>
-            <p>L'utilisateur s'authentifie via JWT, parcourt le catalogue, ajoute des articles au panier et passe commande. Le back-office permet aux administrateurs de gérer les produits, les stocks et le suivi des commandes.</p>
+            <summary data-i18n="proj_shopflow_how">Comment ça marche</summary>
+            <p data-i18n="proj_shopflow_how_text">L'utilisateur s'authentifie via JWT, parcourt le catalogue, ajoute des articles au panier et passe commande. Le back-office permet aux administrateurs de gérer les produits, les stocks et le suivi des commandes.</p>
           </details>
           <div class="project-stack">
             <span class="pill">Java</span>
@@ -1114,19 +1145,20 @@
             <img src="assests/health7.png" alt="HealthGuide 7">
             <img src="assests/health8.png" alt="HealthGuide 8">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent">‹</button>
-          <button class="screenshot-btn next" aria-label="Suivant">›</button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev">‹</button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next">›</button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
-            <div class="project-title">HealthGuide</div>
+            <div class="project-title" data-i18n="proj_health_title">HealthGuide</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc">Application web de suivi médical intégrant l'OCR (reconnaissance de texte) et un chatbot intelligent basé sur l'API Google Gemini pour l'analyse d'ordonnances et de documents médicaux.</div>
+          <div class="project-desc" data-i18n="proj_health_desc">Application web de suivi médical intégrant l'OCR (reconnaissance de texte) et un chatbot intelligent basé sur l'API Google Gemini pour l'analyse d'ordonnances et de documents médicaux.</div>
+          <p class="project-desc-full" data-i18n="proj_health_full">Application web de suivi médical pensée pour simplifier la gestion des documents de santé au quotidien. Elle intègre une technologie d'OCR (reconnaissance de texte) permettant d'extraire automatiquement les informations d'ordonnances et de documents médicaux scannés. Un chatbot intelligent, basé sur l'API Google Gemini, accompagne l'utilisateur pour répondre à ses questions et l'aider à interpréter ses documents. L'interface, développée en React, offre une expérience fluide et accessible. Le backend Express.js orchestre la communication entre l'OCR, le chatbot et le stockage des données utilisateur.</p>
           <details>
-            <summary>Comment ça marche</summary>
-            <p>L'utilisateur télécharge une ordonnance ou une analyse médicale scannée. Le moteur OCR extrait le texte du document, puis le chatbot Gemini interprète les informations, répond aux questions du patient et synthétise les points essentiels pour faciliter la compréhension et le suivi médical.</p>
+            <summary data-i18n="proj_health_how">Comment ça marche</summary>
+            <p data-i18n="proj_health_how_text">L'utilisateur télécharge une ordonnance ou une analyse médicale scannée. Le moteur OCR extrait le texte du document, puis le chatbot Gemini interprète les informations, répond aux questions du patient et synthétise les points essentiels pour faciliter la compréhension et le suivi médical.</p>
           </details>
           <div class="project-stack">
             <span class="pill">React</span>
@@ -1147,19 +1179,19 @@
             <img src="assests/ia3.png" alt="Projet IA 3">
             <img src="assests/ia4.png" alt="Projet IA 4">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent">‹</button>
-          <button class="screenshot-btn next" aria-label="Suivant">›</button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev">‹</button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next">›</button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
-            <div class="project-title">Projet IA — Agents intelligents</div>
+            <div class="project-title" data-i18n="proj_ia_title">Projet IA — Agents intelligents</div>
             <span class="project-tag">v0.9</span>
           </div>
-          <div class="project-desc">Implémentation et comparaison d'agents intelligents en Python (agent réflexe, recherche BFS) dans le cadre d'un projet d'intelligence artificielle.</div>
+          <div class="project-desc" data-i18n="proj_ia_desc">Implémentation et comparaison d'agents intelligents en Python (agent réflexe, recherche BFS) dans le cadre d'un projet d'intelligence artificielle.</div>
           <details>
-            <summary>Comment ça marche</summary>
-            <p>Chaque agent lit un environnement de grille, applique une stratégie (réflexe basé sur des règles, ou BFS pour trouver le chemin optimal) et retourne une action. Les performances sont comparées sur plusieurs scénarios.</p>
+            <summary data-i18n="proj_ia_how">Comment ça marche</summary>
+            <p data-i18n="proj_ia_how_text">Chaque agent lit un environnement de grille, applique une stratégie (réflexe basé sur des règles, ou BFS pour trouver le chemin optimal) et retourne une action. Les performances sont comparées sur plusieurs scénarios.</p>
           </details>
           <div class="project-stack">
             <span class="pill">Python</span>
@@ -1180,19 +1212,19 @@
             <img src="assests/care5.png" alt="Medical Care 5">
             <img src="assests/care6.png" alt="Medical Care 6">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent">‹</button>
-          <button class="screenshot-btn next" aria-label="Suivant">›</button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev">‹</button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next">›</button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
-            <div class="project-title">Medical Care</div>
+            <div class="project-title" data-i18n="proj_medical_title">Medical Care</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc">Plateforme permettant aux utilisateurs à mobilité réduite de réserver facilement des soins médicaux à domicile : choix de l'acte médical selon leur état, préférences, et localisation.</div>
+          <div class="project-desc" data-i18n="proj_medical_desc">Plateforme permettant aux utilisateurs à mobilité réduite de réserver facilement des soins médicaux à domicile : choix de l'acte médical selon leur état, préférences, et localisation.</div>
           <details>
-            <summary>Comment ça marche</summary>
-            <p>L'utilisateur sélectionne l'acte médical adapté à sa situation, précise ses besoins et son adresse. Le système envoie la demande à l'infirmier ou médecin concerné, qui se déplace alors au domicile du patient pour le soin.</p>
+            <summary data-i18n="proj_medical_how">Comment ça marche</summary>
+            <p data-i18n="proj_medical_how_text">L'utilisateur sélectionne l'acte médical adapté à sa situation, précise ses besoins et son adresse. Le système envoie la demande à l'infirmier ou médecin concerné, qui se déplace alors au domicile du patient pour le soin.</p>
           </details>
           <div class="project-stack">
             <span class="pill">HTML</span>
@@ -1213,19 +1245,19 @@
             <img src="assests/cisco3.png" alt="Cisco Packet Tracer 3">
             <img src="assests/cisco4.png" alt="Cisco Packet Tracer 4">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent">‹</button>
-          <button class="screenshot-btn next" aria-label="Suivant">›</button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev">‹</button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next">›</button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
-            <div class="project-title">Réseaux - Cisco Packet Tracer</div>
+            <div class="project-title" data-i18n="proj_cisco_title">Réseaux - Cisco Packet Tracer</div>
             <span class="project-tag">v1.0</span>
           </div>
-          <div class="project-desc">Configurations réseau avancées sur Cisco Packet Tracer : NAT dynamique, NAT statique, ACL étendue et concepts de routage.</div>
+          <div class="project-desc" data-i18n="proj_cisco_desc">Configurations réseau avancées sur Cisco Packet Tracer : NAT dynamique, NAT statique, ACL étendue et concepts de routage.</div>
           <details>
-            <summary>Comment ça marche</summary>
-            <p>Mise en place de scénarios réseaux complets : configuration du NAT dynamique et statique pour le partage d'accès internet, implémentation d'ACL étendues pour le filtrage du trafic, et application de concepts de routage (statique et dynamique) pour l'interconnexion de réseaux locaux et distants.</p>
+            <summary data-i18n="proj_cisco_how">Comment ça marche</summary>
+            <p data-i18n="proj_cisco_how_text">Mise en place de scénarios réseaux complets : configuration du NAT dynamique et statique pour le partage d'accès internet, implémentation d'ACL étendues pour le filtrage du trafic, et application de concepts de routage (statique et dynamique) pour l'interconnexion de réseaux locaux et distants.</p>
           </details>
           <div class="project-stack">
             <span class="pill">Cisco IOS</span>
@@ -1247,31 +1279,31 @@
   <div class="wrap">
     <div class="section-head">
       <span class="tag mono"></span>
-      <h2>Compétences</h2>
+      <h2 data-i18n="skills_title">Compétences</h2>
     </div>
     <div class="deps">
       <div class="deps-group">
-        <div class="label">"langages"</div>
+        <div class="label" data-i18n="skills_lang">"langages"</div>
         <div class="deps-line"><span class="k">Java</span>, <span class="k">Python</span>, <span class="k">JavaScript</span>, <span class="k">C</span>, <span class="k">C++</span></div>
       </div>
       <div class="deps-group">
-        <div class="label">"web"</div>
+        <div class="label" data-i18n="skills_web">"web"</div>
         <div class="deps-line"><span class="k">HTML5</span>, <span class="k">CSS3</span>, <span class="k">Bootstrap</span>, <span class="k">Tailwind CSS</span>, <span class="k">React</span>, <span class="k">Vite</span>, <span class="k">Next.js</span>, <span class="k">Express.js</span>, <span class="k">Spring Boot</span>, <span class="k">REST API</span></div>
       </div>
       <div class="deps-group">
-        <div class="label">"bases_de_donnees"</div>
+        <div class="label" data-i18n="skills_db">"bases_de_donnees"</div>
         <div class="deps-line"><span class="k">MySQL</span>, <span class="k">Oracle Database</span>, <span class="k">H2 Database</span>, <span class="k">pgvector</span></div>
       </div>
       <div class="deps-group">
-        <div class="label">"securite"</div>
+        <div class="label" data-i18n="skills_sec">"securite"</div>
         <div class="deps-line"><span class="k">Spring Security</span>, <span class="k">JWT Authentication</span></div>
       </div>
       <div class="deps-group">
-        <div class="label">"outils"</div>
+        <div class="label" data-i18n="skills_tools">"outils"</div>
         <div class="deps-line"><span class="k">Git</span>, <span class="k">GitHub</span>, <span class="k">VS Code</span>, <span class="k">Linux</span>, <span class="k">Postman</span>, <span class="k">Docker</span>, <span class="k">Ollama</span></div>
       </div>
       <div class="deps-group">
-        <div class="label">"concepts"</div>
+        <div class="label" data-i18n="skills_concepts">"concepts"</div>
         <div class="deps-line"><span class="k">POO</span>, <span class="k">Structures de données</span>, <span class="k">Algorithmes</span>, <span class="k">UML</span>, <span class="k">Architecture MVC</span>, <span class="k">Git Workflow</span></div>
       </div>
     </div>
@@ -1284,15 +1316,15 @@
   <div class="wrap">
     <div class="section-head" style="margin-bottom:8px;">
       <span class="tag mono"></span>
-      <h2>Contact</h2>
+      <h2 data-i18n="contact_title">Contact</h2>
     </div>
-    <p class="dim">Ouvert aux stages et collaborations. N'hésitez pas à me contacter.</p>
+    <p class="dim" data-i18n="contact_desc">Ouvert aux stages et collaborations. N'hésitez pas à me contacter.</p>
     <div class="connect-links">
       <a href="mailto:sarrabenmohamed20@gmail.com">sarrabenmohamed20@gmail.com</a>
       <a href="https://github.com/sarra6" target="_blank" rel="noopener">GitHub ↗</a>
       <a href="https://linkedin.com/in/sarra-ben-mohamed-a76544372" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
-    <div class="foot-note"> build: 2026 — dernière mise à jour</div>
+    <div class="foot-note" data-i18n="foot_note"> build: 2026 — dernière mise à jour</div>
   </div>
 </footer>
 
@@ -1344,6 +1376,175 @@
     });
   });
 </script>
+
+<script>
+  const translations = {
+    fr: {
+      nav_about: "à propos",
+      nav_projects: "projets",
+      nav_skills: "compétences",
+      nav_certifications: "certifications",
+      nav_contact: "contact",
+      hero_subtitle: "Étudiante en Génie Logiciel & Systèmes d'Information",
+      hero_institution: "Faculté des Sciences de Monastir · Tunisie",
+      hero_bio: "Passionnée par le développement Full-Stack, les systèmes Linux, les réseaux et les bases de données. J'aime comprendre le fonctionnement complet d'une application, du front-end à l'infrastructure qui la fait tourner.",
+      hero_btn_projects: "VOIR MES PROJETS",
+      hero_btn_contact: "ME CONTACTER",
+      stat_projects: "projets réalisés",
+      stat_tech: "technologies maîtrisées",
+      stat_ieee: "membre IEEE SIGHT",
+      badge_t: "Parcours",
+      badge_v: "Génie Logiciel<br>& Systèmes d'Information",
+      photo_year: "Année",
+      about_title: "À propos",
+      about_bio: "Étudiante en Sciences de l'Informatique, spécialité Génie Logiciel & Systèmes d'Information, à la Faculté des Sciences de Monastir. Depuis le début de mes études, je m'intéresse à l'informatique dans son entier — du développement d'applications à la gestion des données, en passant par les systèmes et les réseaux qui font fonctionner le tout. J'aime apprendre par la pratique : chaque projet est pour moi l'occasion de découvrir une nouvelle technologie ou un nouveau concept. Autonome et curieuse, je cherche à comprendre les choses en profondeur plutôt qu'en surface, et j'apprécie autant travailler seule que collaborer en équipe sur des projets concrets. Organisée, je sais gérer plusieurs projets en parallèle tout en respectant les délais, et je reste toujours en train d'apprendre — que ce soit à travers des cours en ligne, des projets personnels ou des lectures techniques. J'accorde une grande importance à la qualité du code et à la clarté de la communication au sein d'une équipe. Aujourd'hui, je souhaite mettre ces compétences au service d'une entreprise, à travers un stage qui me permettra d'apprendre davantage et de contribuer à de vrais projets.",
+      certifications_title: "Certifications",
+      cert_meta: "Certification",
+      cert_link: "Voir le certificat →",
+      projects_title: "Projets",
+      proj_documind_title: "DocuMind",
+      proj_documind_desc: "DocuMind est une application RAG full-stack — les utilisateurs téléchargent des documents via un frontend Next.js, un backend Spring Boot extrait et segmente le texte, génère des embeddings vectoriels grâce à un modèle d'IA local via Ollama, et stocke le tout dans une base de données PostgreSQL avec l'extension pgvector pour la recherche sémantique. Lorsqu'un utilisateur pose une question, le système récupère les chunks de documents les plus pertinents via recherche par similarité vectorielle et les envoie à un LLM pour générer une réponse fondée et citée — le tout sécurisé par authentification JWT, et l'ensemble de la couche base de données est conteneurisé avec Docker pour garantir la reproductibilité.",
+      proj_documind_how: "Comment ça marche",
+      proj_documind_how_text: "Lorsqu'un utilisateur pose une question, le système récupère les chunks de documents les plus pertinents via recherche par similarité vectorielle et les envoie à un LLM pour générer une réponse fondée et citée — le tout sécurisé par authentification JWT, avec la couche base de données containerisée via Docker pour la reproductibilité.",
+      proj_documind_full: "Application full-stack de type RAG (Retrieval-Augmented Generation) permettant d'interroger des documents en langage naturel. L'utilisateur charge ses fichiers via une interface Next.js, le backend Spring Boot les découpe et génère des embeddings vectoriels grâce à un modèle IA exécuté localement via Ollama. Ces vecteurs sont stockés dans une base PostgreSQL avec l'extension pgvector pour permettre une recherche par similarité sémantique. Lorsqu'un utilisateur pose une question, le système retrouve les passages les plus pertinents et génère une réponse sourcée grâce à un LLM. L'ensemble est sécurisé par authentification JWT et conteneurisé avec Docker pour garantir la reproductibilité.",
+      proj_link_code: "↗ Code",
+      proj_guardia_title: "GUARDIA",
+      proj_guardia_desc: "Plateforme intelligente de gestion des risques et des sinistres pour flottes automobiles : IA, cartographie interactive, tableau de bord, gestion des rôles.",
+      proj_guardia_how: "Comment ça marche",
+      proj_guardia_how_text: "Interface React pour les dashboards et la cartographie, backend Spring Boot exposant des API REST sécurisées par JWT. Les risques sont analysés en temps réel grâce à un modèle d'IA entraîné sur des données historiques de sinistres.",
+      proj_guardia_full: "Plateforme intelligente de gestion des risques et des sinistres destinée aux flottes automobiles. Elle intègre une cartographie interactive permettant de visualiser en temps réel la localisation des véhicules et des incidents. Un tableau de bord centralise les indicateurs clés pour le suivi des sinistres et l'analyse des risques. Le système inclut une gestion fine des rôles utilisateurs (administrateurs, gestionnaires, conducteurs). Développée avec Java, Spring Boot et React, l'application combine robustesse backend et interface moderne.",
+      proj_shopflow_title: "ShopFlow",
+      proj_shopflow_desc: "Plateforme e-commerce Full-Stack avec authentification sécurisée (JWT) et gestion complète des commandes.",
+      proj_shopflow_how: "Comment ça marche",
+      proj_shopflow_how_text: "L'utilisateur s'authentifie via JWT, parcourt le catalogue, ajoute des articles au panier et passe commande. Le back-office permet aux administrateurs de gérer les produits, les stocks et le suivi des commandes.",
+      proj_shopflow_full: "Plateforme e-commerce full-stack couvrant l'ensemble du parcours d'achat, du catalogue jusqu'au paiement. L'authentification des utilisateurs est sécurisée grâce à JWT, garantissant la protection des comptes et des données sensibles. Le back-office permet aux administrateurs de gérer les produits, les stocks et le suivi des commandes en temps réel. La base de données MySQL structure l'ensemble des entités (utilisateurs, produits, commandes) de façon relationnelle. L'architecture s'appuie sur Java et Spring Boot pour une gestion fiable des transactions.",
+      proj_health_title: "HealthGuide",
+      proj_health_desc: "Application web de suivi médical intégrant l'OCR (reconnaissance de texte) et un chatbot intelligent basé sur l'API Google Gemini pour l'analyse d'ordonnances et de documents médicaux.",
+      proj_health_how: "Comment ça marche",
+      proj_health_how_text: "L'utilisateur télécharge une ordonnance ou une analyse médicale scannée. Le moteur OCR extrait le texte du document, puis le chatbot Gemini interprète les informations, répond aux questions du patient et synthétise les points essentiels pour faciliter la compréhension et le suivi médical.",
+      proj_health_full: "Application web de suivi médical pensée pour simplifier la gestion des documents de santé au quotidien. Elle intègre une technologie d'OCR (reconnaissance de texte) permettant d'extraire automatiquement les informations d'ordonnances et de documents médicaux scannés. Un chatbot intelligent, basé sur l'API Google Gemini, accompagne l'utilisateur pour répondre à ses questions et l'aider à interpréter ses documents. L'interface, développée en React, offre une expérience fluide et accessible. Le backend Express.js orchestre la communication entre l'OCR, le chatbot et le stockage des données utilisateur.",
+      proj_ia_title: "Projet IA — Agents intelligents",
+      proj_ia_desc: "Implémentation et comparaison d'agents intelligents en Python (agent réflexe, recherche BFS) dans le cadre d'un projet d'intelligence artificielle.",
+      proj_ia_how: "Comment ça marche",
+      proj_ia_how_text: "Chaque agent lit un environnement de grille, applique une stratégie (réflexe basé sur des règles, ou BFS pour trouver le chemin optimal) et retourne une action. Les performances sont comparées sur plusieurs scénarios.",
+      proj_medical_title: "Medical Care",
+      proj_medical_desc: "Plateforme permettant aux utilisateurs à mobilité réduite de réserver facilement des soins médicaux à domicile : choix de l'acte médical selon leur état, préférences, et localisation.",
+      proj_medical_how: "Comment ça marche",
+      proj_medical_how_text: "L'utilisateur sélectionne l'acte médical adapté à sa situation, précise ses besoins et son adresse. Le système envoie la demande à l'infirmier ou médecin concerné, qui se déplace alors au domicile du patient pour le soin.",
+      proj_cisco_title: "Réseaux - Cisco Packet Tracer",
+      proj_cisco_desc: "Configurations réseau avancées sur Cisco Packet Tracer : NAT dynamique, NAT statique, ACL étendue et concepts de routage.",
+      proj_cisco_how: "Comment ça marche",
+      proj_cisco_how_text: "Mise en place de scénarios réseaux complets : configuration du NAT dynamique et statique pour le partage d'accès internet, implémentation d'ACL étendues pour le filtrage du trafic, et application de concepts de routage (statique et dynamique) pour l'interconnexion de réseaux locaux et distants.",
+      skills_title: "Compétences",
+      skills_lang: "\"langages\"",
+      skills_web: "\"web\"",
+      skills_db: "\"bases_de_donnees\"",
+      skills_sec: "\"securite\"",
+      skills_tools: "\"outils\"",
+      skills_concepts: "\"concepts\"",
+      contact_title: "Contact",
+      contact_desc: "Ouvert aux stages et collaborations. N'hésitez pas à me contacter.",
+      foot_note: "build: 2026 — dernière mise à jour",
+      slide_prev: "Précédent",
+      slide_next: "Suivant",
+      lang_toggle_aria: "Changer de langue"
+    },
+    en: {
+      nav_about: "About",
+      nav_projects: "Projects",
+      nav_skills: "Skills",
+      nav_certifications: "Certifications",
+      nav_contact: "Contact",
+      hero_subtitle: "Student in Software Engineering & Information Systems",
+      hero_institution: "Faculty of Sciences of Monastir · Tunisia",
+      hero_bio: "Passionate about Full-Stack development, Linux systems, networks, and databases. I love understanding the complete functioning of an application, from the front-end to the infrastructure that runs it.",
+      hero_btn_projects: "VIEW MY PROJECTS",
+      hero_btn_contact: "CONTACT ME",
+      stat_projects: "projects completed",
+      stat_tech: "technologies mastered",
+      stat_ieee: "IEEE SIGHT member",
+      badge_t: "Path",
+      badge_v: "Software Engineering<br>& Information Systems",
+      photo_year: "Year",
+      about_title: "About",
+      about_bio: "Computer Science student, specializing in Software Engineering & Information Systems, at the Faculty of Sciences of Monastir. Since the beginning of my studies, I have been interested in computing as a whole — from application development to data management, including the systems and networks that make it all work. I love learning by doing: each project is an opportunity to discover a new technology or concept. Autonomous and curious, I seek to understand things in depth rather than on the surface, and I enjoy both working alone and collaborating in teams on concrete projects. Organized, I can manage multiple projects in parallel while meeting deadlines, and I am always learning — whether through online courses, personal projects, or technical readings. I attach great importance to code quality and clear communication within a team. Today, I want to put these skills to work for a company, through an internship that will allow me to learn more and contribute to real projects.",
+      certifications_title: "Certifications",
+      cert_meta: "Certification",
+      cert_link: "View certificate →",
+      projects_title: "Projects",
+      proj_documind_title: "DocuMind",
+      proj_documind_desc: "DocuMind is a full-stack RAG application — users upload documents through a Next.js frontend, a Spring Boot backend extracts and chunks the text, generates vector embeddings using a locally-run AI model via Ollama, and stores everything in a PostgreSQL database with the pgvector extension for semantic search. When a user asks a question, the system retrieves the most relevant document chunks using vector similarity search and sends them to an LLM to generate a grounded, cited answer — all secured with JWT-based authentication, and the whole database layer containerized with Docker for reproducibility.",
+      proj_documind_how: "How it works",
+      proj_documind_how_text: "When a user asks a question, the system retrieves the most relevant document chunks via vector similarity search and sends them to an LLM to generate a grounded, cited answer — all secured by JWT authentication, with the database layer containerized with Docker for reproducibility.",
+      proj_documind_full: "Full-stack RAG (Retrieval-Augmented Generation) application for querying documents in natural language. Users upload their files through a Next.js interface, the Spring Boot backend chunks them and generates vector embeddings using a locally-run AI model via Ollama. These vectors are stored in a PostgreSQL database with the pgvector extension to enable semantic similarity search. When a user asks a question, the system retrieves the most relevant passages and generates a sourced answer thanks to an LLM. The whole system is secured with JWT authentication and containerized with Docker to ensure reproducibility.",
+      proj_link_code: "↗ Code",
+      proj_guardia_title: "GUARDIA",
+      proj_guardia_desc: "Intelligent platform for risk and claims management for car fleets: AI, interactive mapping, dashboard, role management.",
+      proj_guardia_how: "How it works",
+      proj_guardia_how_text: "React interface for dashboards and mapping, Spring Boot backend exposing REST APIs secured by JWT. Risks are analyzed in real time thanks to an AI model trained on historical claims data.",
+      proj_guardia_full: "Intelligent platform for risk and claims management designed for car fleets. It features interactive mapping to visualize in real time the location of vehicles and incidents. A dashboard centralizes key indicators for claims tracking and risk analysis. The system includes fine-grained user role management (administrators, managers, drivers). Developed with Java, Spring Boot and React, the application combines backend robustness with a modern interface.",
+      proj_shopflow_title: "ShopFlow",
+      proj_shopflow_desc: "Full-Stack e-commerce platform with secure authentication (JWT) and complete order management.",
+      proj_shopflow_how: "How it works",
+      proj_shopflow_how_text: "The user authenticates via JWT, browses the catalog, adds items to the cart and places an order. The back office allows administrators to manage products, stock and order tracking.",
+      proj_shopflow_full: "Full-stack e-commerce platform covering the entire purchasing journey, from catalog to payment. User authentication is secured with JWT, ensuring the protection of accounts and sensitive data. The back office allows administrators to manage products, stock and real-time order tracking. The MySQL database structures all entities (users, products, orders) in a relational way. The architecture is based on Java and Spring Boot for reliable transaction management.",
+      proj_health_title: "HealthGuide",
+      proj_health_desc: "Web application for medical monitoring integrating OCR (text recognition) and an intelligent chatbot based on the Google Gemini API for analyzing prescriptions and medical documents.",
+      proj_health_how: "How it works",
+      proj_health_how_text: "The user uploads a scanned prescription or medical analysis. The OCR engine extracts the text from the document, then the Gemini chatbot interprets the information, answers the patient's questions and summarizes the key points to facilitate understanding and medical monitoring.",
+      proj_health_full: "Web application for medical monitoring designed to simplify daily health document management. It integrates OCR (text recognition) technology to automatically extract information from scanned prescriptions and medical documents. An intelligent chatbot, based on the Google Gemini API, assists users by answering their questions and helping them interpret their documents. The interface, developed in React, offers a smooth and accessible experience. The Express.js backend orchestrates communication between the OCR, the chatbot and user data storage.",
+      proj_ia_title: "AI Project — Intelligent Agents",
+      proj_ia_desc: "Implementation and comparison of intelligent agents in Python (reflex agent, BFS search) as part of an artificial intelligence project.",
+      proj_ia_how: "How it works",
+      proj_ia_how_text: "Each agent reads a grid environment, applies a strategy (rule-based reflex, or BFS to find the optimal path) and returns an action. Performance is compared across multiple scenarios.",
+      proj_medical_title: "Medical Care",
+      proj_medical_desc: "Platform allowing users with reduced mobility to easily book medical care at home: choice of medical procedure according to their condition, preferences, and location.",
+      proj_medical_how: "How it works",
+      proj_medical_how_text: "The user selects the medical procedure suited to their situation, specifies their needs and address. The system sends the request to the concerned nurse or doctor, who then travels to the patient's home for the care.",
+      proj_cisco_title: "Networks - Cisco Packet Tracer",
+      proj_cisco_desc: "Advanced network configurations on Cisco Packet Tracer: dynamic NAT, static NAT, extended ACL and routing concepts.",
+      proj_cisco_how: "How it works",
+      proj_cisco_how_text: "Implementation of complete network scenarios: configuration of dynamic and static NAT for internet access sharing, implementation of extended ACLs for traffic filtering, and application of routing concepts (static and dynamic) for the interconnection of local and remote networks.",
+      skills_title: "Skills",
+      skills_lang: "\"languages\"",
+      skills_web: "\"web\"",
+      skills_db: "\"databases\"",
+      skills_sec: "\"security\"",
+      skills_tools: "\"tools\"",
+      skills_concepts: "\"concepts\"",
+      contact_title: "Contact",
+      contact_desc: "Open to internships and collaborations. Feel free to contact me.",
+      foot_note: "build: 2026 — last update",
+      slide_prev: "Previous",
+      slide_next: "Next",
+      lang_toggle_aria: "Switch language"
+    }
+  };
+
+  function switchLanguage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+    document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
+    localStorage.setItem('portfolio-lang', lang);
+    const btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = lang.toUpperCase();
+  }
+
+  document.getElementById('langToggle').addEventListener('click', () => {
+    const current = localStorage.getItem('portfolio-lang') || 'fr';
+    switchLanguage(current === 'fr' ? 'en' : 'fr');
+  });
+
+  (function initLang() {
+    const saved = localStorage.getItem('portfolio-lang');
+    if (saved) switchLanguage(saved);
+  })();
+</script>
+
 
 </body>
 </html>
