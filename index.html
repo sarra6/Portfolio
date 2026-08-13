@@ -665,20 +665,60 @@
   }
 
   /* STACK */
-  .deps{
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:20px;
+  }
+  .skill-card{
     background:var(--bg-panel);
     border:1px solid var(--line);
     border-radius:var(--radius);
-    padding:28px 32px;
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.85rem;
-    box-shadow: var(--shadow);
+    padding:24px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    display:flex; flex-direction:column; gap:14px;
   }
-  .deps-group{margin-bottom:16px;}
-  .deps-group:last-child{margin-bottom:0;}
-  .deps-group .label{color:var(--accent); margin-bottom:8px;}
-  .deps-line{color:var(--text-dim);}
-  .deps-line .k{color:var(--text);}
+  .skill-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(91,125,104,0.15);
+    border-color:var(--accent);
+  }
+  .skill-icon{
+    width:36px; height:36px;
+    border-radius:10px;
+    background:var(--accent);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1rem;
+  }
+  .skill-card-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--text);
+  }
+  .skill-badges{
+    display:flex; flex-wrap:wrap; gap:0;
+  }
+  .skill-badge{
+    display:inline-block;
+    padding:6px 14px;
+    margin:4px 4px 0 0;
+    background:var(--bg-panel);
+    border-radius:999px;
+    font-size:0.82rem;
+    font-family:'JetBrains Mono', monospace;
+    color:var(--text);
+    transition: background 0.2s ease, color 0.2s ease;
+    border:1px solid var(--line);
+  }
+  .skill-badge:hover{
+    background:var(--accent);
+    color:#FFFFFF;
+    border-color:var(--accent);
+  }
 
   /* CONTACT / FOOTER */
   footer{
@@ -888,7 +928,7 @@
       <div class="hero-right">
         <div class="hero-photo-wrap">
           <div class="hero-photo">
-            <img src="assests/self1.png" alt="Sarra Ben Mohamed">
+            <img src="assests/pdf.png" alt="Sarra Ben Mohamed">
           </div>
           <div class="hero-badge">
             <span class="t" data-i18n="badge_t">Parcours</span>
@@ -945,11 +985,27 @@
       </div>
       <div class="cert-item">
         <div class="cert-main">
+          <span class="cert-name">Web Development Fundamentals</span>
+          <span class="cert-org">IBM SkillsBuild</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
+        </div>
+        <a class="cert-link" href="Certificate/ibm-design.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
+      </div>
+      <div class="cert-item">
+        <div class="cert-main">
           <span class="cert-name">Introduction to Modern AI</span>
           <span class="cert-org">Cisco</span>
           <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
         <a class="cert-link" href="Certificate/certificat modern Ai.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
+      </div>
+      <div class="cert-item">
+        <div class="cert-main">
+          <span class="cert-name">Scrum Fundamentals</span>
+          <span class="cert-org">SCRUMstudy</span>
+          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
+        </div>
+        <a class="cert-link" href="Certificate/ScrumFundamentalsCertified-sarraBenMohamed-1177938.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
       <div class="cert-item">
         <div class="cert-main">
@@ -990,22 +1046,6 @@
           <span class="cert-meta" data-i18n="cert_meta">Certification</span>
         </div>
         <a class="cert-link" href="Certificate/OperatingSystemsBasics.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
-      </div>
-      <div class="cert-item">
-        <div class="cert-main">
-          <span class="cert-name">Scrum Fundamentals</span>
-          <span class="cert-org">SCRUMstudy</span>
-          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
-        </div>
-        <a class="cert-link" href="Certificate/ScrumFundamentalsCertified-sarraBenMohamed-1177938.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
-      </div>
-      <div class="cert-item">
-        <div class="cert-main">
-          <span class="cert-name">Web Development Fundamentals</span>
-          <span class="cert-org">IBM SkillsBuild</span>
-          <span class="cert-meta" data-i18n="cert_meta">Certification</span>
-        </div>
-        <a class="cert-link" href="Certificate/ibm-design.pdf" target="_blank" rel="noopener" data-i18n="cert_link">Voir le certificat →</a>
       </div>
     </div>
   </div>
@@ -1281,30 +1321,77 @@
       <span class="tag mono"></span>
       <h2 data-i18n="skills_title">Compétences</h2>
     </div>
-    <div class="deps">
-      <div class="deps-group">
-        <div class="label" data-i18n="skills_lang">"langages"</div>
-        <div class="deps-line"><span class="k">Java</span>, <span class="k">Python</span>, <span class="k">JavaScript</span>, <span class="k">C</span>, <span class="k">C++</span></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon" data-i18n="skill_icon_lang">L</div>
+        <div class="skill-card-title" data-i18n="skill_title_lang">Langages</div>
+        <div class="skill-badges">
+          <span class="skill-badge">Java</span>
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">JavaScript</span>
+          <span class="skill-badge">C</span>
+          <span class="skill-badge">C++</span>
+          <span class="skill-badge">C#</span>
+        </div>
       </div>
-      <div class="deps-group">
-        <div class="label" data-i18n="skills_web">"web"</div>
-        <div class="deps-line"><span class="k">HTML5</span>, <span class="k">CSS3</span>, <span class="k">Bootstrap</span>, <span class="k">Tailwind CSS</span>, <span class="k">React</span>, <span class="k">Vite</span>, <span class="k">Next.js</span>, <span class="k">Express.js</span>, <span class="k">Spring Boot</span>, <span class="k">REST API</span></div>
+      <div class="skill-card">
+        <div class="skill-icon" data-i18n="skill_icon_web">W</div>
+        <div class="skill-card-title" data-i18n="skill_title_web">Développement Web</div>
+        <div class="skill-badges">
+          <span class="skill-badge">HTML5</span>
+          <span class="skill-badge">CSS3</span>
+          <span class="skill-badge">Bootstrap</span>
+          <span class="skill-badge">Tailwind CSS</span>
+          <span class="skill-badge">React</span>
+          <span class="skill-badge">Vite</span>
+          <span class="skill-badge">Next.js</span>
+          <span class="skill-badge">Express.js</span>
+          <span class="skill-badge">Spring Boot</span>
+          <span class="skill-badge">REST API</span>
+        </div>
       </div>
-      <div class="deps-group">
-        <div class="label" data-i18n="skills_db">"bases_de_donnees"</div>
-        <div class="deps-line"><span class="k">MySQL</span>, <span class="k">Oracle Database</span>, <span class="k">H2 Database</span>, <span class="k">pgvector</span></div>
+      <div class="skill-card">
+        <div class="skill-icon" data-i18n="skill_icon_db">D</div>
+        <div class="skill-card-title" data-i18n="skill_title_db">Bases de données</div>
+        <div class="skill-badges">
+          <span class="skill-badge">MySQL</span>
+          <span class="skill-badge">Oracle Database</span>
+          <span class="skill-badge">H2 Database</span>
+          <span class="skill-badge">pgvector</span>
+        </div>
       </div>
-      <div class="deps-group">
-        <div class="label" data-i18n="skills_sec">"securite"</div>
-        <div class="deps-line"><span class="k">Spring Security</span>, <span class="k">JWT Authentication</span></div>
+      <div class="skill-card">
+        <div class="skill-icon" data-i18n="skill_icon_sec">S</div>
+        <div class="skill-card-title" data-i18n="skill_title_sec">Sécurité</div>
+        <div class="skill-badges">
+          <span class="skill-badge">Spring Security</span>
+          <span class="skill-badge">JWT Authentication</span>
+        </div>
       </div>
-      <div class="deps-group">
-        <div class="label" data-i18n="skills_tools">"outils"</div>
-        <div class="deps-line"><span class="k">Git</span>, <span class="k">GitHub</span>, <span class="k">VS Code</span>, <span class="k">Linux</span>, <span class="k">Postman</span>, <span class="k">Docker</span>, <span class="k">Ollama</span></div>
+      <div class="skill-card">
+        <div class="skill-icon" data-i18n="skill_icon_tools">O</div>
+        <div class="skill-card-title" data-i18n="skill_title_tools">Outils</div>
+        <div class="skill-badges">
+          <span class="skill-badge">Git</span>
+          <span class="skill-badge">GitHub</span>
+          <span class="skill-badge">VS Code</span>
+          <span class="skill-badge">Linux</span>
+          <span class="skill-badge">Postman</span>
+          <span class="skill-badge">Docker</span>
+          <span class="skill-badge">Ollama</span>
+        </div>
       </div>
-      <div class="deps-group">
-        <div class="label" data-i18n="skills_concepts">"concepts"</div>
-        <div class="deps-line"><span class="k">POO</span>, <span class="k">Structures de données</span>, <span class="k">Algorithmes</span>, <span class="k">UML</span>, <span class="k">Architecture MVC</span>, <span class="k">Git Workflow</span></div>
+      <div class="skill-card">
+        <div class="skill-icon" data-i18n="skill_icon_concepts">C</div>
+        <div class="skill-card-title" data-i18n="skill_title_concepts">Concepts</div>
+        <div class="skill-badges">
+          <span class="skill-badge">POO</span>
+          <span class="skill-badge">Structures de données</span>
+          <span class="skill-badge">Algorithmes</span>
+          <span class="skill-badge">UML</span>
+          <span class="skill-badge">Architecture MVC</span>
+          <span class="skill-badge">Git Workflow</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1397,7 +1484,7 @@
       badge_v: "Génie Logiciel<br>& Systèmes d'Information",
       photo_year: "Année",
       about_title: "À propos",
-      about_bio: "Étudiante en Sciences de l'Informatique, spécialité Génie Logiciel & Systèmes d'Information, à la Faculté des Sciences de Monastir. Depuis le début de mes études, je m'intéresse à l'informatique dans son entier — du développement d'applications à la gestion des données, en passant par les systèmes et les réseaux qui font fonctionner le tout. J'aime apprendre par la pratique : chaque projet est pour moi l'occasion de découvrir une nouvelle technologie ou un nouveau concept. Autonome et curieuse, je cherche à comprendre les choses en profondeur plutôt qu'en surface, et j'apprécie autant travailler seule que collaborer en équipe sur des projets concrets. Organisée, je sais gérer plusieurs projets en parallèle tout en respectant les délais, et je reste toujours en train d'apprendre — que ce soit à travers des cours en ligne, des projets personnels ou des lectures techniques. J'accorde une grande importance à la qualité du code et à la clarté de la communication au sein d'une équipe. Aujourd'hui, je souhaite mettre ces compétences au service d'une entreprise, à travers un stage qui me permettra d'apprendre davantage et de contribuer à de vrais projets.",
+      about_bio: "Étudiante en Génie Logiciel & Systèmes d'Information à la Faculté des Sciences de Monastir, je conçois des applications full-stack de bout en bout — du front-end au déploiement, en passant par les bases de données et l'IA (voir DocuMind, mon projet RAG avec Next.js, Spring Boot et Ollama). Autonome et rigoureuse, je code aussi bien seule qu'en équipe, avec 8 certifications Cisco/IBM/SCRUMstudy et 7 projets concrets à l'appui. Aujourd'hui, je cherche un stage pour transformer ces compétences en impact réel.",
       certifications_title: "Certifications",
       cert_meta: "Certification",
       cert_link: "Voir le certificat →",
@@ -1436,17 +1523,23 @@
       proj_cisco_how: "Comment ça marche",
       proj_cisco_how_text: "Mise en place de scénarios réseaux complets : configuration du NAT dynamique et statique pour le partage d'accès internet, implémentation d'ACL étendues pour le filtrage du trafic, et application de concepts de routage (statique et dynamique) pour l'interconnexion de réseaux locaux et distants.",
       skills_title: "Compétences",
-      skills_lang: "\"langages\"",
-      skills_web: "\"web\"",
-      skills_db: "\"bases_de_donnees\"",
-      skills_sec: "\"securite\"",
-      skills_tools: "\"outils\"",
-      skills_concepts: "\"concepts\"",
+      skill_icon_lang: "L",
+      skill_title_lang: "Langages",
+      skill_icon_web: "W",
+      skill_title_web: "Développement Web",
+      skill_icon_db: "D",
+      skill_title_db: "Bases de données",
+      skill_icon_sec: "S",
+      skill_title_sec: "Sécurité",
+      skill_icon_tools: "O",
+      skill_title_tools: "Outils",
+      skill_icon_concepts: "C",
+      skill_title_concepts: "Concepts",
       contact_title: "Contact",
       contact_desc: "Ouvert aux stages et collaborations. N'hésitez pas à me contacter.",
       foot_note: "build: 2026 — dernière mise à jour",
-      slide_prev: "Précédent",
-      slide_next: "Suivant",
+      slide_prev: "←",
+      slide_next: "→",
       lang_toggle_aria: "Changer de langue"
     },
     en: {
@@ -1467,7 +1560,7 @@
       badge_v: "Software Engineering<br>& Information Systems",
       photo_year: "Year",
       about_title: "About",
-      about_bio: "Computer Science student, specializing in Software Engineering & Information Systems, at the Faculty of Sciences of Monastir. Since the beginning of my studies, I have been interested in computing as a whole — from application development to data management, including the systems and networks that make it all work. I love learning by doing: each project is an opportunity to discover a new technology or concept. Autonomous and curious, I seek to understand things in depth rather than on the surface, and I enjoy both working alone and collaborating in teams on concrete projects. Organized, I can manage multiple projects in parallel while meeting deadlines, and I am always learning — whether through online courses, personal projects, or technical readings. I attach great importance to code quality and clear communication within a team. Today, I want to put these skills to work for a company, through an internship that will allow me to learn more and contribute to real projects.",
+      about_bio: "Student in Software Engineering & Information Systems at the Faculty of Sciences of Monastir, I design full-stack applications from end to end — from front-end to deployment, including databases and AI (see DocuMind, my RAG project with Next.js, Spring Boot and Ollama). Autonomous and rigorous, I code both independently and in teams, with 8 Cisco/IBM/SCRUMstudy certifications and 7 concrete projects to back it up. Today, I'm looking for an internship to turn these skills into real impact.",
       certifications_title: "Certifications",
       cert_meta: "Certification",
       cert_link: "View certificate →",
@@ -1506,17 +1599,23 @@
       proj_cisco_how: "How it works",
       proj_cisco_how_text: "Implementation of complete network scenarios: configuration of dynamic and static NAT for internet access sharing, implementation of extended ACLs for traffic filtering, and application of routing concepts (static and dynamic) for the interconnection of local and remote networks.",
       skills_title: "Skills",
-      skills_lang: "\"languages\"",
-      skills_web: "\"web\"",
-      skills_db: "\"databases\"",
-      skills_sec: "\"security\"",
-      skills_tools: "\"tools\"",
-      skills_concepts: "\"concepts\"",
+      skill_icon_lang: "L",
+      skill_title_lang: "Languages",
+      skill_icon_web: "W",
+      skill_title_web: "Web Development",
+      skill_icon_db: "D",
+      skill_title_db: "Databases",
+      skill_icon_sec: "S",
+      skill_title_sec: "Security",
+      skill_icon_tools: "O",
+      skill_title_tools: "Tools",
+      skill_icon_concepts: "C",
+      skill_title_concepts: "Concepts",
       contact_title: "Contact",
       contact_desc: "Open to internships and collaborations. Feel free to contact me.",
       foot_note: "build: 2026 — last update",
-      slide_prev: "Previous",
-      slide_next: "Next",
+      slide_prev: "←",
+      slide_next: "→",
       lang_toggle_aria: "Switch language"
     }
   };
