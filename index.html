@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -1129,8 +1129,8 @@
       <a href="#certifications" data-i18n="nav_certifications">Certifications</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
-    <button class="lang-toggle" id="langToggle" aria-label="Switch language" data-i18n="lang_toggle_aria">FR</button>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <button class="lang-toggle" id="langToggle" aria-label="Changer de langue" data-i18n-aria="lang_toggle_aria">FR</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre" data-i18n-aria="theme_toggle_aria">
       <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
       <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
     </button>
@@ -1146,7 +1146,7 @@
           <span class="last">Ben Mohamed</span>
         </h1>
         <div class="hero-subtitle hero-stagger" data-i18n="hero_subtitle">Software Engineering &amp; Information Systems Student</div>
-        <div class="hero-focus hero-stagger">Full-Stack · Backend · AI · Cloud</div>
+        <div class="hero-focus hero-stagger" data-i18n="hero_focus">Full-Stack · Backend · AI · Cloud</div>
         <p class="bio hero-stagger" data-i18n="hero_bio">Building practical software solutions by combining full-stack development, backend engineering, and intelligent technologies.</p>
         <div class="hero-actions hero-stagger">
           <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">VOIR MES PROJETS</a>
@@ -1190,12 +1190,12 @@
         Third-year Computer Science student specializing in Software Engineering and Information Systems. I build practical and reliable full-stack and backend applications, with growing experience in AI-powered solutions, databases, cloud technologies and deployment. I enjoy turning real-world problems into useful applications while continuously learning and improving my engineering skills.
       </p>
       <div style="display:flex; flex-wrap:wrap; gap:8px;">
-        <span class="pill">Linux</span>
-        <span class="pill">Réseaux</span>
-        <span class="pill">Bases de données</span>
-        <span class="pill">Full-Stack</span>
-        <span class="pill">IA</span>
-        <span class="pill">Sécurité</span>
+        <span class="pill" data-i18n="about_pill_linux">Linux</span>
+        <span class="pill" data-i18n="about_pill_net">Réseaux</span>
+        <span class="pill" data-i18n="about_pill_db">Bases de données</span>
+        <span class="pill" data-i18n="about_pill_fs">Full-Stack</span>
+        <span class="pill" data-i18n="about_pill_ai">IA</span>
+        <span class="pill" data-i18n="about_pill_sec">Sécurité</span>
       </div>
     </div>
   </div>
@@ -1210,7 +1210,7 @@
       <h2 data-i18n="certifications_title">Certifications</h2>
     </div>
     <div class="cert-category anim">
-      <h3>AI &amp; Data</h3>
+      <h3 data-i18n="cert_cat_ai">AI &amp; Data</h3>
       <div class="cert-list">
       <div class="cert-item">
         <div class="cert-main">
@@ -1260,7 +1260,7 @@
       </div>
     </div>
     <div class="cert-category anim">
-      <h3>Networking &amp; Cybersecurity</h3>
+      <h3 data-i18n="cert_cat_net">Networking &amp; Cybersecurity</h3>
       <div class="cert-list">
       <div class="cert-item">
         <div class="cert-main">
@@ -1301,7 +1301,7 @@
       </div>
     </div>
     <div class="cert-category anim">
-      <h3>Cloud</h3>
+      <h3 data-i18n="cert_cat_cloud">Cloud</h3>
       <div class="cert-list">
       <div class="cert-item">
         <div class="cert-main">
@@ -1315,7 +1315,7 @@
       </div>
     </div>
     <div class="cert-category anim">
-      <h3>Software Development</h3>
+      <h3 data-i18n="cert_cat_dev">Software Development</h3>
       <div class="cert-list">
       <div class="cert-item">
         <div class="cert-main">
@@ -1347,7 +1347,7 @@
       <span class="tag mono"></span>
       <h2 data-i18n="projects_title">Projets</h2>
     </div>
-    <p class="dim" style="margin-bottom:32px; max-width:600px;">Découvrez mes projets les plus significatifs — des applications IA aux solutions métier.</p>
+    <p class="dim" style="margin-bottom:32px; max-width:600px;" data-i18n="projects_subtitle">Découvrez mes projets les plus significatifs — des applications IA aux solutions métier.</p>
     <div class="projects-grid anim">
       <div class="project-card project-featured">
         <div class="screenshots">
@@ -1359,15 +1359,15 @@
             <img src="assests/documind4.png" alt="DocuMind 4">
             <img src="assests/documind5.png" alt="DocuMind 5">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n-aria="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n-aria="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
             <div>
               <div class="project-title" data-i18n="proj_documind_title">DocuMind</div>
-              <div class="project-category">AI · RAG · Full-Stack</div>
+              <div class="project-category" data-i18n="proj_documind_tags">AI · RAG · Full-Stack</div>
             </div>
             <span class="project-tag">v1.0</span>
           </div>
@@ -1401,15 +1401,15 @@
             <img src="assests/guardia7.png" alt="GUARDIA 7">
             <img src="assests/guardia8.png" alt="GUARDIA 8">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n-aria="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n-aria="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
             <div>
               <div class="project-title" data-i18n="proj_guardia_title">GUARDIA</div>
-              <div class="project-category">Full-Stack · AI · Risk Management</div>
+              <div class="project-category" data-i18n="proj_guardia_tags">Full-Stack · AI · Risk Management</div>
             </div>
             <span class="project-tag">v1.0</span>
           </div>
@@ -1440,15 +1440,15 @@
             <img src="assests/shopf6.png" alt="ShopFlow 6">
             <img src="assests/shopf7.png" alt="ShopFlow 7">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n-aria="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n-aria="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
             <div>
               <div class="project-title" data-i18n="proj_shopflow_title">ShopFlow</div>
-              <div class="project-category">Full-Stack · E-Commerce</div>
+              <div class="project-category" data-i18n="proj_shopflow_tags">Full-Stack · E-Commerce</div>
             </div>
             <span class="project-tag">v1.0</span>
           </div>
@@ -1480,15 +1480,15 @@
             <img src="assests/health7.png" alt="HealthGuide 7">
             <img src="assests/health8.png" alt="HealthGuide 8">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n-aria="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n-aria="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
             <div>
               <div class="project-title" data-i18n="proj_health_title">HealthGuide</div>
-              <div class="project-category">Full-Stack · AI · HealthTech</div>
+              <div class="project-category" data-i18n="proj_health_tags">Full-Stack · AI · HealthTech</div>
             </div>
             <span class="project-tag">v1.0</span>
           </div>
@@ -1516,15 +1516,15 @@
             <img src="assests/ia3.png" alt="Projet IA 3">
             <img src="assests/ia4.png" alt="Projet IA 4">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n-aria="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n-aria="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
             <div>
               <div class="project-title" data-i18n="proj_ia_title">AI Agents</div>
-              <div class="project-category">Python · AI · Algorithms</div>
+              <div class="project-category" data-i18n="proj_ia_tags">Python · AI · Algorithms</div>
             </div>
             <span class="project-tag">v0.9</span>
           </div>
@@ -1552,15 +1552,15 @@
             <img src="assests/care5.png" alt="Medical Care 5">
             <img src="assests/care6.png" alt="Medical Care 6">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n-aria="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n-aria="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
             <div>
               <div class="project-title" data-i18n="proj_medical_title">Medical Care</div>
-              <div class="project-category">Full-Stack · HealthTech</div>
+              <div class="project-category" data-i18n="proj_medical_tags">Full-Stack · HealthTech</div>
             </div>
             <span class="project-tag">v1.0</span>
           </div>
@@ -1588,15 +1588,15 @@
             <img src="assests/cisco3.png" alt="Cisco Packet Tracer 3">
             <img src="assests/cisco4.png" alt="Cisco Packet Tracer 4">
           </div>
-          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-          <button class="screenshot-btn next" aria-label="Suivant" data-i18n="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <button class="screenshot-btn prev" aria-label="Précédent" data-i18n-aria="slide_prev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="screenshot-btn next" aria-label="Suivant" data-i18n-aria="slide_next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
           <div class="screenshot-dots"></div>
         </div>
         <div class="project-body">
           <div class="project-top">
             <div>
               <div class="project-title" data-i18n="proj_cisco_title">Networks — Cisco</div>
-              <div class="project-category">Networking · Cybersecurity</div>
+              <div class="project-category" data-i18n="proj_cisco_tags">Networking · Cybersecurity</div>
             </div>
             <span class="project-tag">v1.0</span>
           </div>
@@ -1608,7 +1608,7 @@
           <div class="project-stack">
             <span class="pill">Cisco IOS</span>
             <span class="pill">Packet Tracer</span>
-            <span class="pill">Réseaux</span>
+<span class="pill" data-i18n="proj_cisco_pill_net">Réseaux</span>
           </div>
           <div class="project-links">
             <a href="https://github.com/sarra6/cisco-packet-tracer" target="_blank" rel="noopener">↗ Code</a>
@@ -1796,7 +1796,7 @@
   <div class="wrap">
     <div class="footer-brand">
       <div class="footer-name">Sarra Ben Mohamed</div>
-      <div class="footer-role">Software Engineering &amp; Information Systems</div>
+      <div class="footer-role" data-i18n="footer_role">Software Engineering &amp; Information Systems</div>
     </div>
     <div class="connect-links anim">
       <a href="mailto:sarrabenmohamed20@gmail.com">
@@ -1812,7 +1812,7 @@
         LinkedIn
       </a>
     </div>
-    <div class="footer-copy">© 2026 Sarra Ben Mohamed — All rights reserved.</div>
+    <div class="footer-copy" data-i18n="footer_copy">© 2026 Sarra Ben Mohamed — All rights reserved.</div>
   </div>
 </footer>
 
@@ -2012,9 +2012,47 @@
       contact_title: "Contact",
       contact_desc: "Ouvert aux stages et collaborations. N'hésitez pas à me contacter.",
       foot_note: "build: 2026 — dernière mise à jour",
-      slide_prev: "←",
-      slide_next: "→",
-      lang_toggle_aria: "Changer de langue"
+      slide_prev: "Précédent",
+      slide_next: "Suivant",
+      lang_toggle_aria: "Changer de langue",
+      theme_toggle_aria: "Basculer le mode sombre",
+      page_title: "Sarra Ben Mohamed | Étudiante en Génie Logiciel",
+      about_pill_linux: "Linux",
+      about_pill_net: "Réseaux",
+      about_pill_db: "Bases de données",
+      about_pill_fs: "Full-Stack",
+      about_pill_ai: "IA",
+      about_pill_sec: "Sécurité",
+      cert_cat_ai: "IA & Data",
+      cert_cat_net: "Réseaux & Cybersécurité",
+      cert_cat_cloud: "Cloud",
+      cert_cat_dev: "Développement Logiciel",
+      projects_subtitle: "Découvrez mes projets les plus significatifs — des applications IA aux solutions métier.",
+      proj_documind_tags: "IA · RAG · Full-Stack",
+      proj_guardia_tags: "Full-Stack · IA · Gestion des risques",
+      proj_shopflow_tags: "Full-Stack · E-Commerce",
+      proj_health_tags: "Full-Stack · IA · HealthTech",
+      proj_ia_tags: "Python · IA · Algorithmes",
+      proj_medical_tags: "Full-Stack · HealthTech",
+      proj_cisco_tags: "Réseaux · Cybersécurité",
+      proj_cisco_pill_net: "Réseaux",
+      focus_title: "Domaines de focus",
+      focus_backend: "Ingénierie Backend",
+      focus_fullstack: "Développement Full-Stack",
+      focus_ai: "IA & RAG",
+      focus_cloud: "Cloud & DevOps",
+      languages_title: "Langues",
+      lang_ar_code: "TN",
+      lang_ar_name: "Arabe",
+      lang_ar_level: "Langue maternelle",
+      lang_fr_code: "FR",
+      lang_fr_name: "Français",
+      lang_fr_level: "B2 — TCF tout public validé",
+      lang_en_code: "GB",
+      lang_en_name: "Anglais",
+      lang_en_level: "En préparation IELTS",
+      footer_role: "Génie Logiciel &amp; Systèmes d'Information",
+      footer_copy: "© 2026 Sarra Ben Mohamed — Tous droits réservés."
     },
     en: {
       nav_about: "About",
@@ -2093,44 +2131,63 @@
       contact_title: "Contact",
       contact_desc: "Open to internships and collaborations. Feel free to contact me.",
       foot_note: "build: 2026 — last update",
-      slide_prev: "←",
-      slide_next: "→",
+      slide_prev: "Previous",
+      slide_next: "Next",
       lang_toggle_aria: "Switch language",
-      languages_title: "Languages",
-      lang_ar_code: "TN",
-      lang_ar_name: "Arabic",
-      lang_ar_level: "Native",
-      lang_fr_code: "FR",
-      lang_fr_name: "French",
-      lang_fr_level: "B2 — TCF tout public validé",
-      lang_en_code: "GB",
-      lang_en_name: "English",
-      lang_en_level: "Preparing for IELTS"
+      theme_toggle_aria: "Toggle dark mode",
+      page_title: "Sarra Ben Mohamed | Software Engineering Student",
+      about_pill_linux: "Linux",
+      about_pill_net: "Networking",
+      about_pill_db: "Databases",
+      about_pill_fs: "Full-Stack",
+      about_pill_ai: "AI",
+      about_pill_sec: "Security",
+      cert_cat_ai: "AI &amp; Data",
+      cert_cat_net: "Networking &amp; Cybersecurity",
+      cert_cat_cloud: "Cloud",
+      cert_cat_dev: "Software Development",
+      projects_subtitle: "Discover my most significant projects — from AI applications to business solutions.",
+      proj_documind_tags: "AI · RAG · Full-Stack",
+      proj_guardia_tags: "Full-Stack · AI · Risk Management",
+      proj_shopflow_tags: "Full-Stack · E-Commerce",
+      proj_health_tags: "Full-Stack · AI · HealthTech",
+      proj_ia_tags: "Python · AI · Algorithms",
+      proj_medical_tags: "Full-Stack · HealthTech",
+      proj_cisco_tags: "Networking · Cybersecurity",
+      proj_cisco_pill_net: "Networking",
+      footer_role: "Software Engineering &amp; Information Systems",
+      footer_copy: "© 2026 Sarra Ben Mohamed — All rights reserved."
     }
   };
 
   function switchLanguage(lang) {
+    const dict = translations[lang] || translations.fr;
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (translations[lang] && translations[lang][key]) {
-        el.innerHTML = translations[lang][key];
-      }
+      if (dict[key]) el.innerHTML = dict[key];
     });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (dict[key]) el.setAttribute('aria-label', dict[key]);
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-title');
+      if (dict[key]) el.setAttribute('title', dict[key]);
+    });
+    if (dict.page_title) document.title = dict.page_title;
     document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
     localStorage.setItem('portfolio-lang', lang);
     const btn = document.getElementById('langToggle');
     if (btn) btn.textContent = lang.toUpperCase();
   }
 
-  document.getElementById('langToggle').addEventListener('click', () => {
-    const current = localStorage.getItem('portfolio-lang') || 'fr';
-    switchLanguage(current === 'fr' ? 'en' : 'fr');
-  });
+  let currentLang = localStorage.getItem('portfolio-lang') || 'fr';
+  if (translations[currentLang]) switchLanguage(currentLang);
 
-  (function initLang() {
-    const saved = localStorage.getItem('portfolio-lang');
-    if (saved) switchLanguage(saved);
-  })();
+  document.getElementById('langToggle').addEventListener('click', () => {
+    switchLanguage(currentLang === 'fr' ? 'en' : 'fr');
+    currentLang = currentLang === 'fr' ? 'en' : 'fr';
+  });
 </script>
 
 
